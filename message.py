@@ -123,7 +123,7 @@ def Carousel_Template():
                         ),
                         URITemplateAction(
                             label='耳機',
-                            uri='https://www.apple.com/tw/iphone/'
+                            uri='https://24h.pchome.com.tw/search/?q=%E6%89%8B%E6%A9%9F%E8%80%B3%E6%A9%9F'
                             
                         )
                     ]
