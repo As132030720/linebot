@@ -11,7 +11,7 @@ def test():
                 ImageCarouselColumn(
                     image_url="https://mrmad.com.tw/wp-content/uploads/2022/08/iphone-14-lens-vs-iphone-13-lens-difference-comparison-3.jpg",
                     action=URITemplateAction(
-                        label="",
+                        label="iphone",
                         uri="https://www.apple.com/tw/iphone/"
                     )
                 ),
