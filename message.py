@@ -7,42 +7,35 @@ from linebot.models import *
 def imagemap_message():
     message = ImagemapSendMessage(
         base_url="https://i.imgur.com/BfTFVDN.jpg",
-        alt_text='最新的合作廠商有誰呢？',
+        alt_text='功能',
         base_size=BaseSize(height=2000, width=2000),
         actions=[
             URIImagemapAction(
                 #家樂福
-                link_uri="https://tw.shop.com/search/%E5%AE%B6%E6%A8%82%E7%A6%8F",
+                link_uri="https://www.cht.com.tw/home/consumer",
                 area=ImagemapArea(
                     x=0, y=0, width=1000, height=1000
                 )
             ),
             URIImagemapAction(
                 #生活市集
-                link_uri="https://tw.shop.com/search/%E7%94%9F%E6%B4%BB%E5%B8%82%E9%9B%86",
+                link_uri="https://corporate.fetnet.net/content/corp/tw/index.html",
                 area=ImagemapArea(
                     x=1000, y=0, width=1000, height=1000
                 )
             ),
             URIImagemapAction(
                 #阿瘦皮鞋
-                link_uri="https://tw.shop.com/search/%E9%98%BF%E7%98%A6%E7%9A%AE%E9%9E%8B",
+                link_uri="https://www.taiwanmobile.com/content/event/phone_gift1+1/phone.html?utm_source=bing&utm_medium=cpc&msclkid=6953af762419142df3cfc926e8971f9d#1399&mkwid=&pcrid=77859377751445&pmt=bb&pkw=%E5%8F%B0%E7%81%A3%E5%A4%A7%E5%93%A5%E5%A4%A7%E6%89%8B%E6%A9%9F%E5%84%AA%E6%83%A0&pdv=c",
                 area=ImagemapArea(
                     x=0, y=1000, width=1000, height=1000
                 )
             ),
             URIImagemapAction(
                 #塔吉特千層蛋糕
-                link_uri="https://tw.shop.com/search/%E5%A1%94%E5%90%89%E7%89%B9",
+                link_uri="https://ow.tstarcs.taiwanmobile.com/static/about/introduce.html",
                 area=ImagemapArea(
-                    x=1000, y=1000, width=1000, height=500
-                )
-            ),
-            URIImagemapAction(
-                #亞尼克生乳捲
-                link_uri="https://tw.shop.com/search/%E4%BA%9E%E5%B0%BC%E5%85%8B",
-                area=ImagemapArea(
-                    x=1000, y=1500, width=1000, height=500
+                    x=1000, y=1000, width=1000, height=1000
                 )
             )
         ]
