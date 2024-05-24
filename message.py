@@ -119,11 +119,11 @@ def Carousel_Template():
                         ),
                         MessageTemplateAction(
                             label='Android',
-                            data='https://www.android.com/intl/zh-TW_tw/phones-tablets/'
+                            text='https://www.android.com/intl/zh-TW_tw/phones-tablets/'
                         ),
                         URITemplateAction(
                             label='耳機',
-                            data='https://www.apple.com/tw/iphone/'
+                            uri='https://www.apple.com/tw/iphone/'
                             
                         )
                     ]
