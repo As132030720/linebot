@@ -110,20 +110,21 @@ def Carousel_Template():
             columns=[
                 CarouselColumn(
                     thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Number_1_in_green_rounded_square.svg/200px-Number_1_in_green_rounded_square.svg.png',
-                    title='這是第一塊模板',
-                    text='一個模板可以有三個按鈕',
+                    title='手機',
+                    text='選擇想要的手機品牌/耳機',
                     actions=[
                         PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='將這個訊息偷偷回傳給機器人'
+                            label='iphone',
+                            data='https://www.apple.com/tw/iphone/'
                         ),
                         MessageTemplateAction(
-                            label='用戶發送訊息',
-                            text='我知道這是1'
+                            label='Android',
+                            data='https://www.android.com/intl/zh-TW_tw/phones-tablets/'
                         ),
                         URITemplateAction(
-                            label='進入1的網頁',
-                            uri='https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Number_1_in_green_rounded_square.svg/200px-Number_1_in_green_rounded_square.svg.png'
+                            label='耳機',
+                            data='https://www.apple.com/tw/iphone/'
+                            
                         )
                     ]
                 ),
