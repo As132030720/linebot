@@ -109,7 +109,7 @@ def Carousel_Template():
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Number_1_in_green_rounded_square.svg/200px-Number_1_in_green_rounded_square.svg.png',
+                    thumbnail_image_url='https://mrmad.com.tw/wp-content/uploads/2022/08/iphone-14-lens-vs-iphone-13-lens-difference-comparison-3.jpg',
                     title='手機',
                     text='選擇想要的手機品牌/耳機',
                     actions=[
