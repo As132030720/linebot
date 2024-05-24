@@ -9,17 +9,17 @@ def test():
         template=ImageCarouselTemplate(
             columns=[
                 ImageCarouselColumn(
-                    image_url="https://i.imgur.com/uKYgfVs.jpg",
+                    image_url="https://mrmad.com.tw/wp-content/uploads/2022/08/iphone-14-lens-vs-iphone-13-lens-difference-comparison-3.jpg",
                     action=URITemplateAction(
-                        label="新鮮水果",
-                        uri="http://img.juimg.com/tuku/yulantu/110709/222-110F91G31375.jpg"
+                        label="",
+                        uri="https://www.apple.com/tw/iphone/"
                     )
                 ),
                 ImageCarouselColumn(
-                    image_url="https://i.imgur.com/QOcAvjt.jpg",
+                    image_url="https://www.bing.com/images/search?view=detailV2&ccid=gmecOAGr&id=C1E07CB975343D08F99416A978D6C738B0C1C1ED&thid=OIP.gmecOAGrAH6rpy8QHFoXbAHaE7&mediaurl=https%3a%2f%2fimage-cdn.hypb.st%2fhttps%3a%2f%2fhk.hypebeast.com%2ffiles%2f2017%2f12%2f2017-top-10-android-smartphones-001.jpg%3fq%3d75%26w%3d800%26cbr%3d1%26fit%3dmax&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.82679c3801ab007eaba72f101c5a176c%3frik%3d7cHBsDjH1nipFg%26pid%3dImgRaw%26r%3d0&exph=533&expw=800&q=android%e6%89%8b%e6%a9%9f&simid=608051044956190891&FORM=IRPRST&ck=4EB31B91DFC313D51D2930DCC8ACDB8D&selectedIndex=0&itb=0",
                     action=URITemplateAction(
-                        label="新鮮蔬菜",
-                        uri="https://cdn.101mediaimage.com/img/file/1410464751urhp5.jpg"
+                        label="Android",
+                        uri="https://www.android.com/intl/zh-TW_tw/phones-tablets/"
                     )
                 ),
                 ImageCarouselColumn(
