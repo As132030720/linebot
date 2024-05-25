@@ -19,6 +19,7 @@ from news import *
 import tempfile, os
 import datetime
 import time
+import requests
 #======python的函數庫==========
 
 app = Flask(__name__)
