@@ -1,4 +1,4 @@
-from flask import Flask, request, abort
+from flask import Flask, request, abort, BeautifulSoup
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -8,7 +8,6 @@ from linebot.exceptions import (
 )
 from linebot.models import *
 
-from bs4 import BeautifulSoup
 #======這裡是呼叫的檔案內容=====
 from message import *
 from new import *
