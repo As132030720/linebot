@@ -59,13 +59,13 @@ def handle_message(event):
     elif '註冊會員' in msg:
         message = Confirm_Template()
         line_bot_api.reply_message(event.reply_token, message)
-    elif 'iphone' in msg:
+    elif '筆電' in msg:
         message = Carousel_Template()
         line_bot_api.reply_message(event.reply_token, message)
     elif '手機' in msg:
         message = test()
         line_bot_api.reply_message(event.reply_token, message)
-    elif '功能列表' in msg:
+    elif '列表' in msg:
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
     elif '新聞' in msg:
