@@ -6,33 +6,29 @@ from linebot.models import *
 #ImagemapSendMessage(組圖訊息)
 def imagemap_message():
     message = ImagemapSendMessage(
-        base_url="https://img.onl/2diEAB#",
+        base_url="https://i.postimg.cc/tRB0KLw7/4.jpg",
         alt_text='功能',
         base_size=BaseSize(height=2000, width=2000),
         actions=[
             URIImagemapAction(
-                #家樂福
                 link_uri="https://www.cht.com.tw/home/consumer",
                 area=ImagemapArea(
                     x=0, y=0, width=1000, height=1000
                 )
             ),
             URIImagemapAction(
-                #生活市集
                 link_uri="https://corporate.fetnet.net/content/corp/tw/index.html",
                 area=ImagemapArea(
                     x=1000, y=0, width=1000, height=1000
                 )
             ),
             URIImagemapAction(
-                #阿瘦皮鞋
                 link_uri="https://www.taiwanmobile.com/content/event/phone_gift1+1/phone.html?utm_source=bing&utm_medium=cpc&msclkid=6953af762419142df3cfc926e8971f9d#1399&mkwid=&pcrid=77859377751445&pmt=bb&pkw=%E5%8F%B0%E7%81%A3%E5%A4%A7%E5%93%A5%E5%A4%A7%E6%89%8B%E6%A9%9F%E5%84%AA%E6%83%A0&pdv=c",
                 area=ImagemapArea(
                     x=0, y=1000, width=1000, height=1000
                 )
             ),
             URIImagemapAction(
-                #塔吉特千層蛋糕
                 link_uri="https://ow.tstarcs.taiwanmobile.com/static/about/introduce.html",
                 area=ImagemapArea(
                     x=1000, y=1000, width=1000, height=1000
