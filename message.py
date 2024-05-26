@@ -99,16 +99,16 @@ def Carousel_Template():
             columns=[
                 CarouselColumn(
                     thumbnail_image_url='https://mrmad.com.tw/wp-content/uploads/2022/08/iphone-14-lens-vs-iphone-13-lens-difference-comparison-3.jpg',
-                    title='手機',
-                    text='選擇想要的手機品牌/耳機',
+                    title='筆電',
+                    text='副標題可以自己改',
                     actions=[
                         PostbackTemplateAction(
-                            label='iphone',
-                            data='https://www.apple.com/tw/iphone/'
+                            label='功能',
+                            data='將這個訊息偷偷回傳給機器人'
                         ),
                         MessageTemplateAction(
-                            label='Android',
-                            text='https://www.android.com/intl/zh-TW_tw/phones-tablets/'
+                            label='用戶發送訊息',
+                            text='不准亂按'
                         ),
                         URITemplateAction(
                             label='耳機',
@@ -128,10 +128,10 @@ def Carousel_Template():
                         ),
                         MessageTemplateAction(
                             label='用戶發送訊息',
-                            text='我知道這是1'
+                            text='不准亂按'
                         ),
                         URITemplateAction(
-                            label='進入1的網頁',
+                            label='我是1',
                             uri='https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Number_1_in_green_rounded_square.svg/200px-Number_1_in_green_rounded_square.svg.png'
                         )
                     ]
@@ -143,14 +143,14 @@ def Carousel_Template():
                     actions=[
                         PostbackTemplateAction(
                             label='回傳一個訊息',
-                            data='這是ID=3'
+                            data='將這個訊息偷偷回傳給機器人'
                         ),
                         MessageTemplateAction(
                             label='用戶發送訊息',
-                            text='我知道這是3'
+                            text='不准亂按'
                         ),
                         URITemplateAction(
-                            label='uri2',
+                            label='我是3',
                             uri='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Number_3_in_yellow_rounded_square.svg/200px-Number_3_in_yellow_rounded_square.svg.png'
                         )
                     ]
