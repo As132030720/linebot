@@ -70,7 +70,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, message)
     elif '3C新聞' in msg:
         message = get_latest_article()
-        line_bot_api.reply_message(event.reply_token, message)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
     else:
         message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)
