@@ -59,7 +59,7 @@ def handle_message(event):
     elif '註冊會員' in msg:
         message = Confirm_Template()
         line_bot_api.reply_message(event.reply_token, message)
-    elif '3C' in msg:
+    elif 'iphone' in msg:
         message = Carousel_Template()
         line_bot_api.reply_message(event.reply_token, message)
     elif '手機' in msg:
@@ -68,7 +68,7 @@ def handle_message(event):
     elif '功能列表' in msg:
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
-    elif '3C新聞' in msg:
+    elif '新聞' in msg:
         message = get_latest_article()
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
     else:
