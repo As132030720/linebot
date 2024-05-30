@@ -72,6 +72,9 @@ def handle_message(event):
     elif '手機' in msg:
         message = test()
         line_bot_api.reply_message(event.reply_token, message)
+    elif '餐廳' in msg:
+        message = restaurant()
+        line_bot_api.reply_message(event.reply_token, message)
     elif '列表' in msg:
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
