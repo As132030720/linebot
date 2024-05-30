@@ -2,6 +2,7 @@
 from linebot import (LineBotApi, WebhookHandler)
 from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
+import re
 
 def test():
     message = TemplateSendMessage(
@@ -40,3 +41,74 @@ def test():
         )
     )
     return message
+
+def restaurant(event):
+    message = text = event.message.text
+    if re.match('餐廳', message):
+        carousel_template_message = TemplateSendMessage(
+            alt_text='免費教學影片',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/wpM584d.jpg',
+                        title='南港',
+                        text=' ',
+                        actions=[
+                            MessageAction(
+                                label='南港美食',
+                                text='我想知道南港附近美食'
+                            ),
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://www.google.com/maps/search/%E9%A4%90%E5%BB%B3/@25.052646,121.6074928,17z/data=!3m1!4b1?authuser=0'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/W7nI6fg.jpg',
+                        title='市政府',
+                        text=' ',
+                        actions=[
+                            MessageAction(
+                                label='市政府美食',
+                                text='我想知道市政府附近美食'
+                            ),
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://www.google.com/maps/search/%E9%A4%90%E5%BB%B3/@25.0412613,121.563957,17z/data=!3m1!4b1?authuser=0'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/W7nI6fg.jpg',
+                        title='台北車站',
+                        text=' ',
+                        actions=[
+                            MessageAction(
+                                label='台北車站美食',
+                                text='我想知道台北車站附近美食'
+                            ),
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://www.google.com/maps/search/%E9%A4%90%E5%BB%B3/@25.0486866,121.5148271,16z/data=!3m1!4b1?authuser=0'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/l7rzfIK.jpg',
+                        title='板橋',
+                        text=' ',
+                        actions=[
+                            MessageAction(
+                                label='板橋車站美食',
+                                text='我想知道板橋車站美食'
+                            ),
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://www.google.com/maps/search/%E9%A4%90%E5%BB%B3/@25.0133281,121.4605482,16z/data=!3m1!4b1?authuser=0'
+                            )
+                        ]
+                    )
+                ]
+            )
+        )
