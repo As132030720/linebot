@@ -161,7 +161,7 @@ def Carousel_Template():
     return message
 
 #TemplateSendMessage - ImageCarouselTemplate(圖片旋轉木馬)
-def Carousel_Template1(event):
+def ImageCarouselTemplate(event):
     message = event.message.text
     
     if re.match('餐廳', message):
