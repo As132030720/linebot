@@ -20,6 +20,8 @@ import tempfile, os
 import datetime
 import time
 import requests
+import openai
+import traceback
 #======python的函數庫==========
 
 app = Flask(__name__)
@@ -28,6 +30,8 @@ static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 line_bot_api = LineBotApi(os.getenv('CHANNEL_ACCESS_TOKEN'))
 # Channel Secret
 handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
+#OPENAI API Key設定
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 
 # 監聽所有來自 /callback 的 Post Request
