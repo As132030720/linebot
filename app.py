@@ -33,6 +33,14 @@ handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 #OPENAI API Key設定
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
+def GPT_response(text):
+    # 接收回應
+    response = openai.Completion.create(model="gpt-3.5-turbo-instruct", prompt=text, temperature=0.5, max_tokens=500)
+    print(response)
+    # 重組回應
+    answer = response['choices'][0]['text'].replace('。','')
+    return answer
+
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -54,6 +62,14 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
+    try:
+        GPT_answer = GPT_response(msg)
+        print(GPT_answer)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(GPT_answer))
+    except:
+        print(traceback.format_exc())
+        line_bot_api.reply_message(event.reply_token, TextSendMessage('你所使用的OPENAI API key額度可能已經超過，請於後台Log內確認錯誤訊息'))
+
     if '功能' in msg:
         message = imagemap_message()
         line_bot_api.reply_message(event.reply_token, message)
@@ -78,6 +94,7 @@ def handle_message(event):
     else:
         message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)
+
 
 @handler.add(PostbackEvent)
 def handle_message(event):
