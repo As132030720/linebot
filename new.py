@@ -112,3 +112,4 @@ def restaurant(event):
                 ]
             )
         )
+        return message
