@@ -87,6 +87,22 @@ def handle_message(event):
             print(traceback.format_exc())
             line_bot_api.reply_message(event.reply_token, TextSendMessage('你所使用的OPENAI API key額度可能已經超過，請於後台Log內確認錯誤訊息'))
 
+@handler.add(MessageEvent, message=LocationMessage)
+def handle_location_message(event):
+    location_name = event.message.address
+    if '南港' in location_name:
+        # 南港3C產品店的經緯度
+        latitude = 25.052
+        longitude = 121.607
+        # 回覆南港3C產品店的位置訊息
+        message = LocationSendMessage(
+            title='南港3C產品店',
+            address='南港3C產品店地址',
+            latitude=latitude,
+            longitude=longitude
+        )
+        line_bot_api.reply_message(event.reply_token, message)
+        
 # 處理語音訊息
 @handler.add(MessageEvent, message=AudioMessage)
 def handle_audio_message(event):
