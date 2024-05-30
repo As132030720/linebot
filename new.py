@@ -43,7 +43,7 @@ def test():
     return message
 
 def restaurant(event):
-    message = text = event.message.text
+    message = event.message.text
     if re.match('餐廳', message):
         carousel_template_message = TemplateSendMessage(
             alt_text='免費教學影片',
@@ -112,4 +112,4 @@ def restaurant(event):
                 ]
             )
         )
-        return message
+        return carousel_template_message
