@@ -1,4 +1,4 @@
-from flask import Flask, request, abort
+from flask import Flask, request, abort, send_from_directory
 from linebot import (
     LineBotApi, WebhookHandler
 )
@@ -26,12 +26,12 @@ static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 line_bot_api = LineBotApi(os.getenv('CHANNEL_ACCESS_TOKEN'))
 # Channel Secret
 handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
-# OPENAI API Key 設定
+# OPENAI API Key設定
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
 def GPT_response(text):
     # 接收回應
-    response = openai.Completion.create(model="gpt-4-turbo", prompt=text, temperature=0.5, max_tokens=1000)
+    response = openai.Completion.create(model="gpt-3.5-turbo-instruct", prompt=text, temperature=0.5, max_tokens=500)
     print(response)
     # 重組回應
     answer = response['choices'][0]['text'].replace('。', '')
@@ -118,6 +118,32 @@ def handle_sticker_message(event):
     )
     line_bot_api.reply_message(event.reply_token, message)
 
+# 處理圖片訊息
+@handler.add(MessageEvent, message=ImageMessage)
+def handle_image_message(event):
+    # 取得圖片訊息的 ID
+    message_id = event.message.id
+    # 從 LINE 伺服器下載圖片訊息
+    message_content = line_bot_api.get_message_content(message_id)
+    # 建立臨時檔案保存圖片
+    with tempfile.NamedTemporaryFile(dir=static_tmp_path, delete=False) as tf:
+        for chunk in message_content.iter_content():
+            tf.write(chunk)
+        tempfile_path = tf.name
+
+    # 定義圖片回應訊息
+    message = ImageSendMessage(
+        original_content_url=request.host_url + 'static/tmp/' + os.path.basename(tempfile_path),
+        preview_image_url=request.host_url + 'static/tmp/' + os.path.basename(tempfile_path)
+    )
+    # 回應圖片訊息
+    line_bot_api.reply_message(event.reply_token, message)
+
+# 端點，用於提供靜態文件
+@app.route('/static/tmp/<path:filename>')
+def download_file(filename):
+    return send_from_directory(static_tmp_path, filename)
+
 @handler.add(PostbackEvent)
 def handle_postback(event):
     print(event.postback.data)
@@ -135,5 +161,6 @@ import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
+
 
 
