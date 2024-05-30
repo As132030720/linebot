@@ -189,7 +189,7 @@ def handle_postback(event):
         # 例如，你可以回傳一條訊息給機器人
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text="我收到了來自按鈕的訊息")
+            TextSendMessage(text="搜尋規格/n(MacBook/MacBook Air/MacBook Pro)")
         )
     else:
         # 其他 postback data 的處理
