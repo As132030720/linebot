@@ -139,6 +139,28 @@ def handle_image_message(event):
     # 回應圖片訊息
     line_bot_api.reply_message(event.reply_token, message)
 
+# 處理影片訊息
+@handler.add(MessageEvent, message=VideoMessage)
+def handle_video_message(event):
+    # 取得影片訊息的 ID
+    message_id = event.message.id
+    # 從 LINE 伺服器下載影片訊息
+    message_content = line_bot_api.get_message_content(message_id)
+    # 建立臨時檔案保存影片
+    with tempfile.NamedTemporaryFile(dir=static_tmp_path, delete=False) as tf:
+        for chunk in message_content.iter_content():
+            tf.write(chunk)
+        tempfile_path = tf.name
+
+    # 定義影片回應訊息
+    message = VideoSendMessage(
+        original_content_url=request.host_url + 'static/tmp/' + os.path.basename(tempfile_path),
+        preview_image_url=request.host_url + 'static/tmp/' + os.path.basename(tempfile_path)
+    )
+    # 回應影片訊息
+    line_bot_api.reply_message(event.reply_token, message)
+
+
 # 端點，用於提供靜態文件
 @app.route('/static/tmp/<path:filename>')
 def download_file(filename):
