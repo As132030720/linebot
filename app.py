@@ -184,12 +184,26 @@ def download_file(filename):
 @handler.add(PostbackEvent)
 def handle_postback(event):
     # 判斷是否為你希望的 postback data
-    if event.postback.data == '將這個訊息偷偷回傳給機器人':
+    if event.postback.data == '0':
         # 在這裡可以進行相應的處理
         # 例如，你可以回傳一條訊息給機器人
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text="搜尋規格/n(MacBook/MacBook Air/MacBook Pro)")
+            TextSendMessage(text="搜尋規格(MacBook/MacBook Air/MacBook Pro)")
+        )
+    elif event.postback.data == '1':
+        # 在這裡可以進行相應的處理
+        # 例如，你可以回傳一條訊息給機器人
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="幹")
+        )
+    elif event.postback.data == '2':
+        # 在這裡可以進行相應的處理
+        # 例如，你可以回傳一條訊息給機器人
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="媽的")
         )
     else:
         # 其他 postback data 的處理
