@@ -87,22 +87,93 @@ def handle_message(event):
             print(traceback.format_exc())
             line_bot_api.reply_message(event.reply_token, TextSendMessage('你所使用的OPENAI API key額度可能已經超過，請於後台Log內確認錯誤訊息'))
 
-@handler.add(MessageEvent, message=LocationMessage)
-def handle_location_message(event):
-    location_name = event.message.address
-    if '南港' in location_name:
-        # 南港3C產品店的經緯度
-        latitude = 25.052
-        longitude = 121.607
-        # 回覆南港3C產品店的位置訊息
-        message = LocationSendMessage(
-            title='南港3C產品店',
-            address='南港3C產品店地址',
-            latitude=latitude,
-            longitude=longitude
+@handler.add(MessageEvent, message=TextMessage)
+def handle_message(event):
+    message = text = event.message.text
+    if re.match('餐廳', message):
+        carousel_template_message = TemplateSendMessage(
+            alt_text='免費教學影片',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/wpM584d.jpg',
+                        title='南港',
+                        text=' ',
+                        actions=[
+                            MessageAction(
+                                label='南港美食',
+                                text='我想知道南港附近美食'
+                            ),
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://www.google.com/maps/search/%E9%A4%90%E5%BB%B3/@25.052646,121.6074928,17z/data=!3m1!4b1?authuser=0'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/W7nI6fg.jpg',
+                        title='市政府',
+                        text=' ',
+                        actions=[
+                            MessageAction(
+                                label='市政府美食',
+                                text='我想知道市政府附近美食'
+                            ),
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://www.google.com/maps/search/%E9%A4%90%E5%BB%B3/@25.0412613,121.563957,17z/data=!3m1!4b1?authuser=0'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/W7nI6fg.jpg',
+                        title='台北車站',
+                        text=' ',
+                        actions=[
+                            MessageAction(
+                                label='台北車站美食',
+                                text='我想知道台北車站附近美食'
+                            ),
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://www.google.com/maps/search/%E9%A4%90%E5%BB%B3/@25.0486866,121.5148271,16z/data=!3m1!4b1?authuser=0'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/l7rzfIK.jpg',
+                        title='板橋',
+                        text=' ',
+                        actions=[
+                            MessageAction(
+                                label='板橋車站美食',
+                                text='我想知道板橋車站美食'
+                            ),
+                            URIAction(
+                                label='馬上查看',
+                                uri='https://www.google.com/maps/search/%E9%A4%90%E5%BB%B3/@25.0133281,121.4605482,16z/data=!3m1!4b1?authuser=0'
+                            )
+                        ]
+                    )
+                ]
+            )
         )
-        line_bot_api.reply_message(event.reply_token, message)
-        
+        line_bot_api.reply_message(
+            event.reply_token, carousel_template_message)
+
+    if re.match('我想知道南港附近美食', message):
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(
+            '瓦城泰國料理\ngoogle評分=4.1\n評論數量=1020\n*輸入店名以獲得位置資訊'))
+    if re.match('瓦城泰國料理', message):
+        location_message = LocationSendMessage(
+            title='瓦城泰國料理',
+            address='115台北市南港區忠孝東路七段369號8樓',
+            latitude=25.05382134597444,
+            longitude=121.60466156931716
+        )
+        line_bot_api.reply_message(event.reply_token, location_message)
+    else:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
 # 處理語音訊息
 @handler.add(MessageEvent, message=AudioMessage)
 def handle_audio_message(event):
