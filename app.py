@@ -75,11 +75,10 @@ def handle_message(event):
     elif '餐廳' in msg:
         message = restaurant(event)
         line_bot_api.reply_message(event.reply_token, message)
-        
-      if re.match('我想知道南港附近美食', message):
+    elif '我想知道南港附近美食' in msg:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(
             '瓦城泰國料理\ngoogle評分=4.1\n評論數量=1020\n*輸入店名以獲得位置資訊'))
-      if re.match('瓦城泰國料理', message):
+    elif '瓦城泰國料理' in msg:
         location_message = LocationSendMessage(
             title='瓦城泰國料理',
             address='115台北市南港區忠孝東路七段369號8樓',
@@ -87,8 +86,6 @@ def handle_message(event):
             longitude=121.60466156931716
         )
         line_bot_api.reply_message(event.reply_token, location_message)
-      else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
     elif '列表' in msg:
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
