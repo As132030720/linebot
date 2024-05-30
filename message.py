@@ -104,7 +104,7 @@ def Carousel_Template():
                     actions=[
                         PostbackTemplateAction(
                             label='規格',
-                            data='將這個訊息偷偷回傳給機器人'
+                            data='0'
                         ),
                         MessageTemplateAction(
                             label='尺吋',
@@ -124,7 +124,7 @@ def Carousel_Template():
                     actions=[
                          PostbackTemplateAction(
                             label='回傳一個訊息',
-                            data='將這個訊息偷偷回傳給機器人'
+                            data='1'
                         ),
                         MessageTemplateAction(
                             label='用戶發送訊息',
@@ -143,7 +143,7 @@ def Carousel_Template():
                     actions=[
                         PostbackTemplateAction(
                             label='回傳一個訊息',
-                            data='將這個訊息偷偷回傳給機器人'
+                            data='2'
                         ),
                         MessageTemplateAction(
                             label='用戶發送訊息',
