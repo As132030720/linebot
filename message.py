@@ -100,7 +100,7 @@ def Carousel_Template():
                 CarouselColumn(
                     thumbnail_image_url='https://i.postimg.cc/sgZzc88L/macbook.jpg',
                     title='MacBook',
-                    text='選擇規格/尺吋/',
+                    text='選擇規格/尺吋/查詢價格',
                     actions=[
                         PostbackTemplateAction(
                             label='規格',
