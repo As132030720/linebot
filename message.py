@@ -98,21 +98,21 @@ def Carousel_Template():
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url='https://mrmad.com.tw/wp-content/uploads/2022/08/iphone-14-lens-vs-iphone-13-lens-difference-comparison-3.jpg',
-                    title='筆電',
-                    text='副標題可以自己改',
+                    thumbnail_image_url='https://i.postimg.cc/sgZzc88L/macbook.jpg',
+                    title='MacBook',
+                    text='選擇規格/尺吋/',
                     actions=[
                         PostbackTemplateAction(
-                            label='功能',
+                            label='規格',
                             data='將這個訊息偷偷回傳給機器人'
                         ),
                         MessageTemplateAction(
-                            label='用戶發送訊息',
-                            text='不准亂按'
+                            label='尺吋',
+                            text='請上網查'
                         ),
                         URITemplateAction(
-                            label='耳機',
-                            uri='https://24h.pchome.com.tw/search/?q=%E6%89%8B%E6%A9%9F%E8%80%B3%E6%A9%9F'
+                            label='價格',
+                            uri='https://www.apple.com/tw/macbook-air/specs/'
                             
                         )
                     ]
