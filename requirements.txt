@@ -3,4 +3,3 @@ flask
 gunicorn
 BeautifulSoup4
 openai < 1.0.0
-sqlite3
