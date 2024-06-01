@@ -12,12 +12,14 @@ import time
 import requests
 import openai
 import traceback
+import sqlite3
 
 #======這裡是呼叫的檔案內容=====
 from message import *
 from new import *
 from Function import *
 from news import *
+from cellphone import *
 #======這裡是呼叫的檔案內容=====
 
 app = Flask(__name__)
@@ -69,7 +71,7 @@ def handle_message(event):
     elif '筆電' in msg:
         message = Carousel_Template()
         line_bot_api.reply_message(event.reply_token, message)
-    elif '手機' in msg:
+    elif '狗狗' in msg:
         message = test()
         line_bot_api.reply_message(event.reply_token, message)
     elif '餐廳' in msg:
