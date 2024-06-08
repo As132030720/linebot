@@ -1,0 +1,226 @@
+/* 通用样式重置 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #f4e8d5; /* 应用于整个页面的背景颜色 */
+}
+
+/* 导航栏样式 */
+.index {
+    background-color: #5f473a;
+    height: 45px;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+
+.index a.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    position: absolute;
+    left: 80px;
+    top: 0;
+    line-height: 45px;
+    text-decoration: none;
+}
+
+.index a.logo:hover {
+    color: #f4e8d5;
+    text-decoration: none;
+}
+
+.index ul {
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    line-height: 45px;
+}
+
+.index li {
+    display: inline;
+    margin-right: 4vw;
+}
+
+.index ul a {
+    color: white;
+    text-decoration: none;
+}
+
+.index ul a:hover {
+    text-decoration: underline;
+}
+
+/* 标题区域样式 */
+.title {
+    height: 50vh;
+    background-image: url("images/訂位.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
+}
+
+.title h1 {
+    color: white;
+    text-shadow: #5f473a 0.1em 0.1em 0.2em;
+    position: absolute;
+    right: 60px;
+    top: 75px;
+    line-height: 80px;
+    font-size: 60px;
+}
+
+/* 主内容区域样式 */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reservation {
+    margin-bottom: 40px; /* 与底部黑色栏的高度相同 */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: auto;
+    background-color: #ee9c18f8;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(33, 44, 55, .3);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+/* 在鼠标离开表单后逐渐恢复背景颜色 */
+.reservation {
+    transition: background-color 4s ease; /* 添加过渡效果 */
+}
+
+/* 当鼠标离开表单时恢复成橘色 */
+.reservation.mouse-out {
+    background-color: #186eeef8; 
+}
+
+
+/* 表单标题样式 */
+.reservation h1 {
+    color: #eee;
+    text-shadow: #5f473a 0.1em 0.1em 0.2em;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: left; /* 将文本靠左对齐 */
+    margin-bottom: 20px;
+}
+
+.reservation form {
+    width: 300px; /* 表单宽度 */
+    padding: 10px; /* 内边距 */
+    height: 800px; /* 表单高度 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* 输入框和文本区域样式 */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="datetime-local"],
+input[type="number"],
+textarea {
+    width: 100%;
+    height: 30px; /* 调整高度 */
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #eee;
+    font-size: 16px; /* 字体大小 */
+    font-weight: bold;
+    text-shadow: #5f473a 0.1em 0.1em 0.2em;
+    margin-bottom: 10px; /* 下边距 */
+    padding: 5px; /* 内边距 */
+    box-sizing: border-box;
+    outline: none;
+    transition: border-bottom 0.3s ease; /* 边框过渡效果 */
+    color: white; /* 字体颜色 */
+    text-align: left; /* 左对齐 */
+}
+
+/* 备注文本区域样式 */
+textarea {
+    height: 50px; /* 调整高度 */
+}
+
+/* 输入框和文本区域的占位符样式 */
+input::placeholder,
+textarea::placeholder {
+    font-size: 16px; /* 占位符字体大小 */
+    color: #aaa; /* 占位符颜色 */
+}
+
+/* 输入框和文本区域悬停时的样式 */
+input:hover,
+textarea:hover {
+    border-bottom: 2px solid #ccc; /* 边框颜色 */
+}
+
+/* 按钮样式 */
+button {
+    width: 100px; /* 按钮宽度 */
+    height: 30px; /* 按钮高度 */
+    border: 2px solid #eee; /* 边框宽度 */
+    background-color: transparent;
+    border-radius: 20px; /* 圆角按钮 */
+    color: white; /* 字体颜色 */
+    font-size: 16px; /* 字体大小 */
+    font-weight: bold;
+    text-shadow: #5f473a 0.1em 0.1em 0.2em;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s; /* 过渡效果 */
+    margin-right: 10px; /* 右边距 */
+}
+
+button:hover {
+    background-color: #eee; /* 悬停时的背景颜色 */
+    color: #5f473a; /* 悬停时的文字颜色 */
+}
+
+/* 表单标签样式 */
+label {
+    font-size: 16px; /* 标签字体大小 */
+    font-weight: bold;
+    text-shadow: #5f473a 0.1em 0.1em 0.2em;
+    margin-bottom: 10px; /* 下边距 */
+    text-align: left; /* 左对齐 */
+    color: white; /* 标签字体颜色 */
+}
+
+/* 按钮容器样式 */
+.buttons {
+    display: flex; /* 将按钮放在同一行 */
+    justify-content: flex-start; /* 左对齐 */
+    margin-top: 20px; /* 上边距 */
+}
+
+/* 底部栏样式 */
+footer {
+    background-color: #000000;
+    color: #B7B7B7;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}

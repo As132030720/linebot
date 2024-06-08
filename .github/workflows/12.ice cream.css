@@ -1,0 +1,192 @@
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.index {
+    background-color: #5f473a;
+    height: 45px;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+
+.index a.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    position: absolute;
+    left: 80px;
+    top: 0;
+    line-height: 45px;
+    text-decoration: none;
+}
+
+.index a.logo:hover {
+    color: #f4e8d5;
+    text-decoration: none;
+}
+
+.index ul {
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    line-height: 45px;
+}
+
+.index li {
+    display: inline;
+    margin-right: 4vw;
+}
+
+.index ul a {
+    color: white;
+    text-decoration: none;
+}
+
+.index ul a:hover {
+    text-decoration: underline;
+}
+
+.title {
+    height: 50vh;
+    background-image: url("images/ice cream.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.title h1 {
+    color: rgb(255, 255, 255);
+    text-shadow: #5f473a 0.1em 0.1em 0.2em;
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 80px;
+    font-size: 60px;
+}
+
+main {
+    background-color: #f4e8d5;
+    padding: 10px 200px;
+}
+
+.menu-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.menu-section h2 {
+    margin-bottom: 30px;
+}
+
+.category {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.category h2 {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    width: auto;
+}
+
+.horizontal-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-item {
+    width: calc(33.33% - 80px);
+    margin-right: 40px;
+    margin-bottom: 100px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.menu-item h3 {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* 图片容器样式 */
+.img-wrapper {
+    background-color: #f4e8d5;
+    padding: 10px;
+    border-radius: 15px; /* 圆角效果 */
+    display: inline-block;
+}
+
+.menu-item img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    display: block; /* 确保图片是块级元素 */
+    margin: 0 auto; /* 图片居中 */
+}
+/* 新增表格樣式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    font-weight: bold;
+    border: 2px solid #ddd;
+    padding: 9px;
+    text-align: center;
+    vertical-align: bottom;
+    width: 200px;
+    height: 100px;
+}
+
+tr:nth-last-child(2) td {
+    border-bottom: 4px solid #000; /* 倒數第二條橫線加粗 */
+}
+
+td img {
+    width: 120px;  /* 根據需要調整圖片大小 */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px; /* 置中對齊並添加底部間距 */
+}
+
+.ice-cream {
+    position: relative;
+    display: inline-block;
+}
+
+.description {
+    visibility: hidden;
+    width: 250px;
+    background-color: #5ebed8;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.ice-cream:hover .description {
+    visibility: visible;
+    opacity: 1;
+}

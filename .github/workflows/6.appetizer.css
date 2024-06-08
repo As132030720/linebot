@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.index {
+    background-color: #5f473a;
+    height: 45px;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+
+.index a.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    position: absolute;
+    left: 80px;
+    top: 0;
+    line-height: 45px;
+    text-decoration: none;
+}
+
+.index a.logo:hover {
+    color: #f4e8d5;
+    text-decoration: none;
+}
+
+.index ul {
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    line-height: 45px;
+}
+
+.index li {
+    display: inline;
+    margin-right: 4vw;
+}
+
+.index ul a {
+    color: white;
+    text-decoration: none;
+}
+
+.index ul a:hover {
+    text-decoration: underline;
+}
+
+.title {
+    height: 50vh;
+    background-image: url("images/前菜.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Added to make the text position relative to the title */
+}
+
+.title h1 {
+    color: white;
+    text-shadow: #5f473a 0.1em 0.1em 0.2em;
+    position: absolute;
+    right: 60px;
+    top: 50%; /* Adjusted to vertically center */
+    transform: translateY(-50%); /* Vertically center the text */
+    line-height: 80px;
+    font-size: 60px;
+}
+
+main {
+    background-color: #f4e8d5;
+    padding: 10px 200px;
+}
+
+.menu-section {
+    margin-top: 100px; /* Added to create space between header and menu section */
+}
+
+.category {
+    margin-bottom: 85px; /* Added to create space between categories */
+    text-align: center; /* Center the category titles */
+}
+
+.category h2 {
+    margin-bottom: 40px; /* Increased spacing between category title and content */
+}
+
+.horizontal-menu {
+    display: flex; /* Added to align menu items horizontally */
+    overflow-x: auto; /* Added to enable horizontal scrolling if necessary */
+    justify-content: center; /* Center the items horizontally */
+}
+
+.menu-item {
+    margin-right: 40px; /* Increased spacing between menu items */
+    margin-bottom: 40px; /* Increased spacing between menu items and category title */
+    text-align: center; /* Center the text */
+}
+
+.menu-item h3 {
+    margin-top: 30px; /* Added to create space between image and text */
+}
+
+.menu-item img {
+    max-width: 250px; /* Increased maximum width for menu item images */
+}

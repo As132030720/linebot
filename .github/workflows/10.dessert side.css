@@ -1,0 +1,146 @@
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.index {
+    background-color: #5f473a;
+    height: 45px;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+
+.index a.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    position: absolute;
+    left: 80px;
+    top: 0;
+    line-height: 45px;
+    text-decoration: none;
+}
+
+.index a.logo:hover {
+    color: #f4e8d5;
+    text-decoration: none;
+}
+
+.index ul {
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    line-height: 45px;
+}
+
+.index li {
+    display: inline;
+    margin-right: 4vw;
+}
+
+.index ul a {
+    color: white;
+    text-decoration: none;
+}
+
+.index ul a:hover {
+    text-decoration: underline;
+}
+
+.title {
+    height: 50vh;
+    background-image: url("images/烘焙甜點.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.title h1 {
+    color: rgb(255, 255, 255);
+    text-shadow: #5f473a 0.1em 0.1em 0.2em;
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 80px;
+    font-size: 60px;
+}
+
+main {
+    background-color: #f4e8d5;
+    padding: 10px 200px;
+}
+
+.menu-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.menu-section h2 {
+    margin-bottom: 30px;
+}
+
+.category {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.category h2 {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    width: auto;
+}
+
+.horizontal-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-item {
+    width: calc(33.33% - 40px);
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.menu-item h3 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.menu-item img {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+}
+
+/* 特定图片放大 */
+.menu-item img[alt="Appetizer H4"], /* 比利時水果麻糬鬆餅 */
+.menu-item img[alt="Appetizer H5"]  /* 黑糖珍珠麻糬鬆餅 */ {
+    max-width: 400px;
+    width: 100%;
+}
+
+/* 增加比利時水果麻糬鬆餅和黑糖珍珠麻糬鬆餅的间距 */
+.menu-item img[alt="Appetizer H4"] {
+    margin-right: 10px;
+}
+
+.menu-item img[alt="Appetizer H5"] {
+    margin-left: 10px;
+}

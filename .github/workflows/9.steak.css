@@ -1,0 +1,125 @@
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.index {
+    background-color: #5f473a;
+    height: 45px;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+
+.index a.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    position: absolute;
+    left: 80px;
+    top: 0;
+    line-height: 45px;
+    text-decoration: none;
+}
+
+.index a.logo:hover {
+    color: #f4e8d5;
+    text-decoration: none;
+}
+
+.index ul {
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    line-height: 45px;
+}
+
+.index li {
+    display: inline;
+    margin-right: 4vw;
+}
+
+.index ul a {
+    color: white;
+    text-decoration: none;
+}
+
+.index ul a:hover {
+    text-decoration: underline;
+}
+
+.title {
+    height: 50vh;
+    background-image: url("images/排餐.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.title h1 {
+    color: rgb(255, 255, 255);
+    text-shadow: #5f473a 0.1em 0.1em 0.2em;
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 80px;
+    font-size: 60px;
+}
+
+main {
+    background-color: #f4e8d5;
+    padding: 10px 200px;
+}
+
+.menu-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* 使内容垂直居中 */
+    text-align: center; /* 水平居中 */
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.menu-section h2 {
+    margin-bottom: 30px; /* 调整标题与菜品图片之间的间距 */
+}
+
+.category {
+    margin-bottom: 100px;
+    text-align: center; /* 水平居中 */
+}
+
+.category h2 {
+    display: inline-block; /* 让标题根据内容自适应宽度 */
+    padding: 10px;
+    text-align: center; /* 水平居中 */
+    width: auto; /* 根据需要调整宽度 */
+}
+
+.horizontal-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-item {
+    width: calc(33.33% - 80px);
+    margin-right: 40px;
+    margin-bottom: 100px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.menu-item h3 {
+    margin-top: 50px; /* Added to create space between image and text */
+}
+
+.menu-item img {
+    max-width: 300px; /* Increased maximum width for menu item images */
+}

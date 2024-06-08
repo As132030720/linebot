@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>我的旅遊地圖</title>
+    <style>
+        table {
+            width: 90%; /* Reduce table width to 90% */
+            border-collapse: collapse;
+            table-layout: fixed;
+            margin: auto; /* Center the table */
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td.location {
+            font-size: 1.5em; /* Increase the font size for location text */
+            font-weight: bold; /* Make the text bold */
+            color: blue; /* Change the text color */
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align: center;">我的旅遊地圖</h2> <!-- Center the heading -->
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">我的旅遊地圖</th>
+        </tr>
+        <tr>
+            <th>風景圖片</th>
+            <th>地點</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img src="images/台江.jfif" alt="台江國家公園"></td>
+            <td class="location">台江國家公園</td>
+        </tr>
+        <tr>
+            <td><img src="images/雪霸.jpg" alt="雪霸國家公園"></td>
+            <td class="location">雪霸國家公園</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="text-align: center; margin-top: 30px;">
+    <a href="basic6.html" style="padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">返回第六頁</a>
+    <a href="basic8.html" style="padding: 10px 20px; background-color: #dc3545; color: #fff; text-decoration: none; border-radius: 5px; margin-left: 10px;">前往第八頁</a>
+</body>
+</html>

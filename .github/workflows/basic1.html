@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="cgi-bin/get.exe" method="get">
+    <h1>歡迎進入基礎作業 以下是DeepStone民調系統</h1>
+    <p>
+        <h2 style="color: rgb(255, 0, 17);">請留意個人資料</h2>
+        <p>姓名: <input type="text" name="username" size="15" placeholder="請輸入中文姓名" autofocus></p>
+        <p>郵件: <input type="email" name="e_mail" size="15" placeholder="abc@aaa.com" autofocus></p>
+        <p>電話: <input type="tel" name="tel" size="15" placeholder="0912345678" autofocus></p>
+        <p>密碼: <input type="password" name="pwd" required></p>
+    </p>
+    <p>性別:</p>
+    <p>
+        <input type="radio" name="sex" value="1" id="M">
+        <label for="M">男性</label>
+        <input type="radio" name="sex" value="0" id="F">
+        <label for="F">女性</label>
+    </p>
+    <p>支持哪個政黨:<br>
+        <input type="checkbox" name="softw" value="html" id="HT">
+        <label for="HT">政黨1</label>
+        <input type="checkbox" name="softw" value="css" id="CS">
+        <label for="CS">政黨2</label>
+        <input type="checkbox" name="softw" value="css" id="CS">
+        <label for="CS">政黨3</label>
+    </p>
+    <hr>
+    施政滿意度(1-10):<input type="range" name="grade" min="1" max="10">
+    <P>
+        專長:<br>
+        <input type="checkbox" name="master" value="english">英文<br>
+        <input type="checkbox" name="master" value="english">日文<br>
+        <input type="checkbox" name="master" value="english">電腦<br>
+        <input type="checkbox" name="master" value="math">數學<br>
+    </P>
+    <p>
+        代表色:<input type="color" name="color" >
+    </p>
+    <hr>
+    <input style="color:blue;" type="submit" value="傳送資料">
+    <input style="color:darkred;" type="reset" value="取消輸入">
+    <p>
+        <mp4 src="images/商午4.png" alt="影片" />
+    </p>
+</form>
+
+<!-- Add the link buttons here -->
+<div style="text-align: center; margin-top: 30px;">
+    <a href="16.about.html" style="padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">返回主題網站</a>
+    <a href="basic2.html" style="padding: 10px 20px; background-color: #dc3545; color: #fff; text-decoration: none; border-radius: 5px; margin-left: 10px;">前往第二頁</a>
+</div>
+
+</body>
+</html>
